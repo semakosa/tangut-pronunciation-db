@@ -9,7 +9,7 @@
 
 This repository hosts the Tangut Pronunciation Database, a collection of TSV files providing pronunciation data for Tangut characters. Each file represents a version of the database, identified by its date, and includes multiple transcription systems with evolving accuracy.
 
-In addition to GitHub, this database is permanently archived at [PHAIDRA](https://phaidra.univie.ac.at/detail/o:2122259), the University of Vienna's digital repository, in accordance with the FAIR principles, ensuring its long-term preservation and accessibility, with a DOI for persistent identification.
+In addition to GitHub, this database is permanently archived at [PHAIDRA](https://phaidra.univie.ac.at/detail/o:2122259), the University of Vienna's digital repository, in accordance with the FAIR principles, ensuring its long-term preservation and accessibility, with a DOI ([10.25365/phaidra.654](https://doi.org/10.25365/phaidra.654)) for persistent identification.
 
 ## Versioning
 
@@ -78,7 +78,7 @@ For questions, permission requests, or collaboration opportunities, please conta
 
 本GitHub仓库（[西夏文拟音数据库](https://github.com/semakosa/tangut-tools)）收录西夏文单字的拟音数据，以一系列TSV文件的形式提供。每个文件代表数据库的一个版本，以日期命名，并包含多个不断完善的转写方案。
 
-本数据库在GitHub之外，同时永久存档于维也纳大学的PHAIDRA系统，确保其长期保存和可访问性。您可以通过[此链接](https://phaidra.univie.ac.at/detail/o:2122259)访问存档版本。
+本数据库在GitHub之外，同时永久存档于维也纳大学的PHAIDRA系统，确保其长期保存和可访问性，并提供永久标识（DOI: [10.25365/phaidra.654](https://doi.org/10.25365/phaidra.654)）。您可以通过[此链接](https://phaidra.univie.ac.at/detail/o:2122259)访问存档版本。
 
 ## 版本管理
 
