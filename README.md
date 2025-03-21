@@ -14,7 +14,7 @@ In addition to GitHub, this database is permanently archived at [PHAIDRA](https:
 ## Versioning
 
 Files follow a date-based versioning scheme in the format `YYYYMMDD.tsv`, for example:
-- `20241129.tsv` - November 29, 2024 version
+- `20250321.tsv` - March 21, 2025 version
 
 The files currently available belong to the **preliminary series** of the database, which still relies on manual corrections and updates. As of early 2025, the data offers better consistency than mainstream dictionaries, but with more limited character coverage. A new **validated series** is currently under development, with pronunciation data mechanically verified from a comprehensive range of sources, ensuring far better character coverage and consistency.
 
