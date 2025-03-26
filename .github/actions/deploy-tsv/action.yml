@@ -1,0 +1,35 @@
+name: 'Deploy TSV Files'
+description: 'Deploys TSV files in the repository to a data directory and creates a simple directory listing for (esp. machine) user of the data'
+inputs:
+  output-dir:
+    description: 'Directory where built files will be stored'
+    required: false
+    default: '_site'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Deploy TSV files
+      shell: bash
+      run: |
+        # Ensure output directory exists
+        mkdir -p ${{ inputs.output-dir }}/data
+        
+        # Clear existing content
+        rm -rf ${{ inputs.output-dir }}/data/*
+        
+        # Copy all TSV files
+        cp *.tsv ${{ inputs.output-dir }}/data/
+        
+        # Create a simple HTML directory listing
+        echo "<html><body>" > ${{ inputs.output-dir }}/data/index.html
+        echo "<h1>Tangut Pronunciation Database - TSV Files</h1>" >> ${{ inputs.output-dir }}/data/index.html
+        echo "<ul>" >> ${{ inputs.output-dir }}/data/index.html
+        
+        for file in ${{ inputs.output-dir }}/data/*.tsv; do
+          filename=$(basename "$file")
+          echo "<li><a href=\"$filename\">$filename</a></li>" >> ${{ inputs.output-dir }}/data/index.html
+        done
+        
+        echo "</ul>" >> ${{ inputs.output-dir }}/data/index.html
+        echo "</body></html>" >> ${{ inputs.output-dir }}/data/index.html 
