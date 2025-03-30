@@ -38,7 +38,26 @@ jobs:
       - name: Deploy TSV files
         uses: ./.github/actions/deploy-tsv
         with:
-          output-dir: './_site'
+          output-dir: '_site'
+      
+      # Checkout private repository for website content
+      - name: Checkout private repository
+        uses: actions/checkout@v4
+        with:
+          repository: semakosa/tangut-reconstruction-release
+          path: private-repo
+          token: ${{ secrets.PRIVATE_REPO_TOKEN }}
+      
+      # Copy content from private repository to site root (excluding .git, .github, etc.)
+      - name: Copy private repository content
+        run: |
+          # Copy all files from private repo to _site root
+          # excluding git-related directories and other files we don't want
+          rsync -av --exclude='.git' \
+                    --exclude='.github' \
+                    --exclude='.gitignore' \
+                    --exclude='README.md' \
+                    ./private-repo/ ./_site/
 
       # Upload the generated site content
       - name: Upload artifact
