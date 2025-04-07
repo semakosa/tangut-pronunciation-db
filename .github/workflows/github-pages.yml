@@ -62,6 +62,7 @@ jobs:
       # Step 2: Deploy documentation in docs/ directory
       - name: Process markdown files
         run: |
+          mkdir -p _site/docs
           echo "Processing markdown files in docs directory"
           for file in docs/*.md; do
             echo "Processing $file..."
