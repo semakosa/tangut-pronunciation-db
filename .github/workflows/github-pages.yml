@@ -27,6 +27,25 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Checkout tangut-markdown repository
+        uses: actions/checkout@v4
+        with:
+          repository: semakosa/tangut-markdown
+          token: ${{ secrets.PRIVATE_REPO_TOKEN }}
+          path: tangut-markdown
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+          cache-dependency-path: tangut-markdown/setup.py
+
+      - name: Install tangut-markdown
+        run: |
+          cd tangut-markdown
+          pip install -e .[audio]
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
         
@@ -34,12 +53,37 @@ jobs:
       - name: Setup site directory
         run: mkdir -p _site
       
-      # Deploy TSV files using the composite action
+      # Step 1: Deploy TSV files using the composite action
       - name: Deploy TSV files
         uses: ./.github/actions/deploy-tsv
         with:
           output-dir: '_site'
-      
+
+      # Step 2: Deploy documentation in docs/ directory
+      - name: Process markdown files
+        run: |
+          echo "Processing markdown files in docs directory"
+          for file in docs/*.md; do
+            echo "Processing $file..."
+            basename=$(basename "$file" .md)
+            python -m tangutdown.tangutdown_cli "$file" -o "_site/docs/${basename}.html" --verbose
+          done      
+
+      - name: Copy additional assets
+        run: |
+          # Copy any media files or assets needed
+          if [ -d "docs/assets" ]; then
+            cp -r docs/assets _site/docs/
+          fi
+          
+          # Create an index page if none exists
+          if [ ! -f "_site/docs/index.html" ] && [ -f "_site/docs/README.html" ]; then
+            cp _site/docs/README.html _site/docs/index.html
+          elif [ ! -f "_site/docs/index.html" ]; then
+            echo "<html><head><meta http-equiv=\"refresh\" content=\"0;URL='$(ls _site/docs/*.html | head -n1 | xargs basename)'\" /></head><body>Redirecting...</body></html>" > _site/docs/index.html
+          fi          
+
+      # Step 3: Copy content from private repository
       # Checkout private repository for website content
       - name: Checkout private repository
         uses: actions/checkout@v4
