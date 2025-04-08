@@ -1,22 +1,29 @@
-[![License: Limited Public Use](https://img.shields.io/badge/License-Limited%20Public%20Use-blue.svg)](https://github.com/semakosa/tangut-tools/blob/main/LICENSE-DATA.md)
+[![License: Limited Public Use](https://img.shields.io/badge/License-Limited%20Public%20Use-blue.svg)](https://github.com/semakosa/tangut-tools/blob/main/LICENSE-DATA.md) 
 [![DOI](https://img.shields.io/badge/DOI-10.25365%2Fphaidra.654-orange.svg)](https://doi.org/10.25365/phaidra.654)
 
-[English](#english) [简体中文](#chinese)
+# Tangut Pronunciation Database — 西夏文拟音数据库
 
-# <a name="english"></a> Tangut Pronunciation Database
+[English](#english) | [简体中文](#chinese) 
 
-## Overview
+## <a name="english"></a> Overview
 
-This repository hosts the Tangut Pronunciation Database, a collection of TSV files providing pronunciation data for Tangut characters. Each file represents a version of the database, identified by its date, and includes multiple transcription systems with evolving accuracy.
+This repository hosts the Tangut Pronunciation Database, a collection of TSV files that provide pronunciation data for Tangut characters. Each file represents a version of the database, identified by its date, and includes multiple transcription systems with evolving accuracy.
 
-In addition to GitHub, this database is permanently archived at [PHAIDRA](https://phaidra.univie.ac.at/detail/o:2122259), the University of Vienna's digital repository, in accordance with the FAIR principles, ensuring its long-term preservation and accessibility, with a DOI ([10.25365/phaidra.654](https://doi.org/10.25365/phaidra.654)) for persistent identification.
+In addition to GitHub, this database is permanently archived at [PHAIDRA](https://phaidra.univie.ac.at/detail/o:2122259), the University of Vienna’s digital repository, in accordance with the FAIR principles, ensuring its long-term preservation and accessibility, with a DOI ([10.25365/phaidra.654](https://doi.org/10.25365/phaidra.654)) for persistent identification.
+
+## Documentation
+
+Detailed documentation of the phonological systems used in this database is available in the [docs](docs/) directory:
+
+- [GHC system overview](https://semakosa.github.io/tangut-pronunciation-db/docs/GHC-en.html) ([docs/GHC-en.md](docs/GHC-en.md)) – Documentation of the Gong Hwang-cherng (GHC) phonological system ([中文版](https://semakosa.github.io/tangut-pronunciation-db/docs/GHC-zh.html))
+- [GX202411 system overview](https://semakosa.github.io/tangut-pronunciation-db/docs/GX202411-en.html) ([docs/GX202411-en.md](docs/GX202411-en.md)) – Documentation of the GX202411 phonological system ([中文版](https://semakosa.github.io/tangut-pronunciation-db/docs/GX202411-zh.html))
 
 ## Versioning
 
 Files follow a date-based versioning scheme in the format `YYYYMMDD.tsv`, for example:
-- `20250321.tsv` - March 21, 2025 version
+- `20250321.tsv` – version of 21 March 2025
 
-The files currently available belong to the **preliminary series** of the database, which still relies on manual corrections and updates. As of early 2025, the data offers better consistency than mainstream dictionaries, but with more limited character coverage. A new **validated series** is currently under development, with pronunciation data mechanically verified from a comprehensive range of sources, ensuring far better character coverage and consistency.
+The files currently available belong to the **preliminary series** of the database, which still relies on manual corrections and updates. As of early 2025, the data offers better consistency than mainstream dictionaries, albeit with more limited character coverage. A new **validated series** is currently under development, with pronunciation data mechanically verified from a comprehensive range of sources, ensuring far better character coverage and consistency.
 
 ## Data Structure
 
@@ -24,19 +31,19 @@ Each TSV file contains the following fields:
 
 | Field | Description |
 |-------|-------------|
-| `li` | Number of the character in Li Fanwen's dictionary |
-| `unicode` | The Tangut character itself in Unicode encoding |
-| `GHC` | Gong Hwang-cherng's phonological reconstruction |
-| `homophones` | Initial class number (1-9) as reflected in the chapter number in the native Tangut dictionary _Homophones_ |
-| `sea` | Rhyme classification as reflected in the chapter number in the native Tangut dictionary _Sea of Characters_ |
-| `GX2021` | GHC system with Xun Gong's 2021 modifications |
+| `li` | The character's number in Li Fanwen's dictionary |
+| `unicode` | The Tangut character itself (in Unicode) |
+| `GHC` | Gong Hwang-cherng's phonological reconstruction [see [docs/GHC-en.md](https://semakosa.github.io/tangut-pronunciation-db/docs/GHC-en.html), [中文版](https://semakosa.github.io/tangut-pronunciation-db/docs/GHC-zh.html)] |
+| `homophones` | Initial class number (1-9) as indicated by the chapter number in the native Tangut dictionary _Homophones_ |
+| `sea` | Rhyme classification as indicated by the chapter number in the native Tangut dictionary _Sea of Characters_ |
+| `GX2021` | GHC system with modifications in (Gong 2021) |
 | `GX202404` | Xun Gong's transcription system as of April 2024 |
-| `GX202411` | Xun Gong's transcription system as of November 2024 |
+| `GX202411` | Xun Gong's transcription system as of November 2024 [see [docs/GX202411-en.md](https://semakosa.github.io/tangut-pronunciation-db/docs/GX202411-en.html), [中文版](https://semakosa.github.io/tangut-pronunciation-db/docs/GX202411-zh.html)] |
 
-Further transcription systems may be added in future versions. All pronunciations given in a row correspond to one another, insofar as the systems are commensurable.
+Additional transcription systems may be incorporated in future versions. All pronunciations listed in a row are aligned with each other, to the extent that the systems are commensurable in the phonological categories involved.
 
-* **GHC**: The pronunciations assigned to characters in the widespread GHC system reflect the author's personal judgment. They do not necessarily coincide with the pronunciations given in other dictionaries using the GHC system, just as the dictionaries themselves often differ.
-* **homophones**, **sea**: The indices are strictly bibliographic. Thus, if a character actually belongs to a group equivalent to some bibliographic group but is not actually attested in the source, no index is given.
+* **GHC**: The pronunciations assigned to characters in the widely used GHC system reflect the author's personal interpretation. They may not align with pronunciations in other dictionaries using the GHC system, just as these dictionaries often differ from each other.
+* **homophones**, **sea**: The indices are purely bibliographic. Thus, if a character belongs to a group equivalent to a bibliographic group but is not actually found in the source, no index is given.
 
 ## License
 
@@ -72,13 +79,18 @@ For questions, permission requests, or collaboration opportunities, please conta
 - **University of Vienna**
 - **Email:** xun.gong@univie.ac.at
 
-# <a name="chinese"></a> 西夏文拟音数据库
-
-## 概述
+## <a name="chinese"></a> 概述
 
 本GitHub仓库（[西夏文拟音数据库](https://github.com/semakosa/tangut-tools)）收录西夏文单字的拟音数据，以一系列TSV文件的形式提供。每个文件代表数据库的一个版本，以日期命名，并包含多个不断完善的转写方案。
 
 本数据库在GitHub之外，同时永久存档于维也纳大学的PHAIDRA系统，确保其长期保存和可访问性，并提供永久标识（DOI: [10.25365/phaidra.654](https://doi.org/10.25365/phaidra.654)）。您可以通过[此链接](https://phaidra.univie.ac.at/detail/o:2122259)访问存档版本。
+
+## 文档说明
+
+本数据库使用的音系构拟系统的详细文档可在 [docs](docs/) 目录中获取：
+
+- [龚煌城拟音系统说明](https://semakosa.github.io/tangut-pronunciation-db/docs/GHC-zh.html) ([docs/GHC-zh.md](docs/GHC-zh.md), [also in English](https://semakosa.github.io/tangut-pronunciation-db/docs/GHC-en.html))
+- [西夏语 GX202411 转写方案](https://semakosa.github.io/tangut-pronunciation-db/docs/GX202411-zh.html) ([docs/GX202411-zh.md](docs/GX202411-zh.md), [also in English](https://semakosa.github.io/tangut-pronunciation-db/docs/GX202411-en.html))
 
 ## 版本管理
 
@@ -95,12 +107,12 @@ For questions, permission requests, or collaboration opportunities, please conta
 |------------|----------------------------------------------------------------------|
 | `li`       | 李范文《夏汉字典》编号                                               |
 | `unicode`  | 字符本身，以Unicode码表示                            |
-| `GHC`      | 龚煌城拟音                                                   |
+| `GHC`      | 龚煌城拟音 [详见 [docs/GHC-zh.md](https://semakosa.github.io/tangut-pronunciation-db/docs/GHC-zh.html), [English](https://semakosa.github.io/tangut-pronunciation-db/docs/GHC-en.html)] |
 | `homophones` | 声母类别，即《同音》章节号（1-9类）                                      |
 | `sea`      | 韵类，即《文海》章节号                                                 |
 | `GX2021`   | 龚煌城拟音，龚勋2021年修订版                                              |
 | `GX202404` | 龚勋拟音，2024年4月版本                                          |
-| `GX202411` | 龚勋拟音，2024年11月版本                                         |
+| `GX202411` | 龚勋拟音，2024年11月版本 [详见 [docs/GX202411-zh.md](https://semakosa.github.io/tangut-pronunciation-db/docs/GX202411-zh.html), [English](https://semakosa.github.io/tangut-pronunciation-db/docs/GX202411-en.html)] |
 
 未来版本可能会引入更多的拟音系统。在各系统之间具有可比性的范围内，同一行中的不同拟音相互对应。
 
