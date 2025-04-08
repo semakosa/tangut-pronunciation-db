@@ -9,14 +9,11 @@
 
 This repository hosts the Tangut Pronunciation Database, a collection of TSV files that provide pronunciation data for Tangut characters. Each file represents a version of the database, identified by its date, and includes multiple transcription systems with evolving accuracy.
 
-In addition to GitHub, this database is permanently archived at [PHAIDRA](https://phaidra.univie.ac.at/detail/o:2122259), the University of Vienna’s digital repository, in accordance with the FAIR principles, ensuring its long-term preservation and accessibility, with a DOI ([10.25365/phaidra.654](https://doi.org/10.25365/phaidra.654)) for persistent identification.
+In addition to GitHub, this database is permanently archived at [PHAIDRA](https://phaidra.univie.ac.at/detail/o:2122259), the University of Vienna's digital repository, in accordance with the FAIR principles, ensuring its long-term preservation and accessibility, with a DOI ([10.25365/phaidra.654](https://doi.org/10.25365/phaidra.654)) for persistent identification.
 
 ## Documentation
 
-Detailed documentation of the phonological systems used in this database is available in the [docs](docs/) directory:
-
-- [GHC system overview](https://semakosa.github.io/tangut-pronunciation-db/docs/GHC-en.html) ([docs/GHC-en.md](docs/GHC-en.md)) – Documentation of the Gong Hwang-cherng (GHC) phonological system ([中文版](https://semakosa.github.io/tangut-pronunciation-db/docs/GHC-zh.html))
-- [GX202411 system overview](https://semakosa.github.io/tangut-pronunciation-db/docs/GX202411-en.html) ([docs/GX202411-en.md](docs/GX202411-en.md)) – Documentation of the GX202411 phonological system ([中文版](https://semakosa.github.io/tangut-pronunciation-db/docs/GX202411-zh.html))
+For practical use and exploration of this pronunciation database, Tangutologists may find the [Tangut Transcription Tool](https://semakosa.github.io/tangut-pronunciation-db/) particularly helpful. Detailed documentation on the phonological systems, including the [GHC system](https://semakosa.github.io/tangut-pronunciation-db/docs/GHC-en.html) ([source](docs/GHC-en.md)) and the [GX202411 system](https://semakosa.github.io/tangut-pronunciation-db/docs/GX202411-en.html) ([source](docs/GX202411-en.md)), is available online and within the `docs/` directory ([中文版](#chinese-documentation)).
 
 ## Versioning
 
@@ -85,12 +82,9 @@ For questions, permission requests, or collaboration opportunities, please conta
 
 本数据库在GitHub之外，同时永久存档于维也纳大学的PHAIDRA系统，确保其长期保存和可访问性，并提供永久标识（DOI: [10.25365/phaidra.654](https://doi.org/10.25365/phaidra.654)）。您可以通过[此链接](https://phaidra.univie.ac.at/detail/o:2122259)访问存档版本。
 
-## 文档说明
+## <a name="chinese-documentation"></a>文档说明
 
-本数据库使用的音系构拟系统的详细文档可在 [docs](docs/) 目录中获取：
-
-- [龚煌城拟音系统说明](https://semakosa.github.io/tangut-pronunciation-db/docs/GHC-zh.html) ([docs/GHC-zh.md](docs/GHC-zh.md), [also in English](https://semakosa.github.io/tangut-pronunciation-db/docs/GHC-en.html))
-- [西夏语 GX202411 转写方案](https://semakosa.github.io/tangut-pronunciation-db/docs/GX202411-zh.html) ([docs/GX202411-zh.md](docs/GX202411-zh.md), [also in English](https://semakosa.github.io/tangut-pronunciation-db/docs/GX202411-en.html))
+想要实际使用和探索本数据库的西夏学研究者，可以使用[西夏文转写工具](https://semakosa.github.io/tangut-pronunciation-db/)。关于本数据库使用的音系构拟系统的详细文档，包括[龚煌城拟音系统](https://semakosa.github.io/tangut-pronunciation-db/docs/GHC-zh.html) ([源文件](docs/GHC-zh.md)) 和 [GX202411 转写方案](https://semakosa.github.io/tangut-pronunciation-db/docs/GX202411-zh.html) ([源文件](docs/GX202411-zh.md))，可以在线查阅，也可在 `docs/` 目录下找到 ([English version](#documentation)).
 
 ## 版本管理
 
